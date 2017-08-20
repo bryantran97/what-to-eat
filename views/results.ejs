@@ -1,0 +1,14 @@
+<p><%= location %></p>
+<p><%= food %></p>
+<h1><%=business.name%></h1>
+<p><%= business.price %></p>
+<p>rating <%= business.rating %>/5 </p>
+<p>location: <%= business.location["display_address"][0] %>  <%= business.location["display_address"][1] %> </p>
+<p><%= business.display_phone %> </p>
+<p>Type:</p> 
+<% business.categories.forEach(function(type){ %>
+    <p><%=type["title"]%></p>
+<% }) %>
+
+<img src="<%=business.image_url%>">
+<a href="<%=business.url%>">Link to Yelp page</a>

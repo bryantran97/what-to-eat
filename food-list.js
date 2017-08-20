@@ -67,7 +67,6 @@ var foodList = [
     "Energy bar",
     "Engastration",
     "Fajita",
-    "Fortune cookie",
     "French dip",
     "Fried chicken",
     "Fried fish",

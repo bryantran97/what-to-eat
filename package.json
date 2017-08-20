@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/bryantran97/what-to-eat#readme",
   "dependencies": {
+    "ejs": "^2.5.7",
     "express": "^4.15.4",
     "request": "^2.81.0",
     "yelp-fusion": "^1.0.3"
