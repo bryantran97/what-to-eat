@@ -1,0 +1,33 @@
+{
+  "name": "whattoeat",
+  "version": "1.0.0",
+  "description": "Random food generator that also gives out location via YELP API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bryantran97/what-to-eat.git"
+  },
+  "keywords": [
+    "what-to-eat",
+    "what",
+    "to",
+    "eat",
+    "yelp",
+    "api",
+    "form"
+  ],
+  "author": "Bryan Tran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bryantran97/what-to-eat/issues"
+  },
+  "homepage": "https://github.com/bryantran97/what-to-eat#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "request": "^2.81.0",
+    "yelp-fusion": "^1.0.3"
+  }
+}
