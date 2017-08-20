@@ -174,6 +174,4 @@ var foodList = [
     "Vienna sausage",
 ]
 
-module.exports = generateRandomFood(){
-    console.log("hi");
-}
+module.exports = foodList;

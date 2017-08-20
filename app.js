@@ -3,7 +3,8 @@
 /* =================== */
 var express      = require("express");       // Node.js framework
 var yelp         = require("yelp-fusion");   // Yelp Fusion API
-var food         = require("./random-food.js");
+var foodList         = require("./food-list.js");
+
 /* =================== */
 /*    CONFIGURATIONS   */
 /* =================== */
@@ -11,11 +12,21 @@ var app = express();
 app.set("view engine", "ejs");               // So it'll say on EJS by default when rendering
 
 /* =================== */
+/*      RANDOM FOOD    */
+/* =================== */
+function generateRandomFood(max){
+    var x = Math.random() * (max - 1) + 1;
+    return foodList[Math.floor(x)];
+}
+var food = generateRandomFood(foodList.length);
+console.log(food);
+
+/* =================== */
 /*       API REQ       */
 /* =================== */
 // Input API's clientID and clientSecret
-var clientId = "hidden";
-var clientSecret = "hidden";
+var clientId = "-";
+var clientSecret = "-";
 
 // Retrieve API Access Token
 var token = yelp.accessToken(clientId, clientSecret).then(response => {
@@ -24,15 +35,16 @@ var token = yelp.accessToken(clientId, clientSecret).then(response => {
     console.log(e);
 });
 
+// Make API call
 function makeAPICall(token) {
     // Make API call
     const client = yelp.client(token);
     
     client.search({
-        term:'tacos',
+        term: food,
         location: 'Dallas, TX'
     }).then(response => {
-      console.log(response.jsonBody.businesses[0].name);
+        console.log(response.jsonBody);
     }).catch(e => {
       console.log(e);
     });
