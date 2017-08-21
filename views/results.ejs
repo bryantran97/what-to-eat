@@ -4,17 +4,15 @@
     <div class="results ui center segment">
         <h2>AWESOMESAUCE! <br />It looks like you got</h2>
         <h1><%= food %></h1>
-        <p>How about geting it at</p>
+        <p>How about getting it at</p>
         <h1><%=business.name%></h1>
-        <div class="img">
-            <img src="<%=business.image_url%>">
-        </div>
-        
         <p>Type: 
         <% business.categories.forEach(function(type){ %>
             <%=type["title"]%>
-        <% }) %>  </p>   
-        
+        <% }) %>  </p>
+        <div class="img">
+            <img src="<%=business.image_url%>">
+        </div>
         <p>Rating: <%= business.rating %>/5 &nbsp; &nbsp; Price Range: <%= business.price %>
         <br />Address: <%= business.location["display_address"][0] %>  <%= business.location["display_address"][1] %><br />Phone: <%= business.display_phone %></p>
         <div class="navigation">
