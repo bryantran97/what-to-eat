@@ -1,4 +1,48 @@
-<form method="GET" action="/results">
-    <input name="location" placeholder="location (ex: Dallas, TX)">
-    <button>Submit</button>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>What-To-Eat</title>
+    <!-- CSS LINKING -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/button.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/input.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/icon.min.css">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Are you a true foodie? <br/>Try me out</h1>
+        <p>Put in your location and press SUBMIT<p>
+        <form method="GET" action="/results">
+            <div class="ui icon input">
+                <input type="text" name="location" placeholder="Location...">
+                <i class="search icon"></i>
+                </div>
+            <button class="ui inverted button">Submit</button>
+        </form>
+    </div>
+    
+    <script>
+        
+        // Ajax call
+        $("form").submit(function(e) {
+            var url = "/results";
+
+            $.ajax({
+                type:"GET",
+                url: url,
+                // seralize form elements
+                data: $("form").serialize(),
+                success: function(data) {
+                    alert(data);
+                }
+            });
+            
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>

@@ -10,6 +10,7 @@ var foodList     = require("./food-list.js");
 /* =================== */
 var app = express();
 app.set("view engine", "ejs");                  // So it'll say on EJS by default when rendering
+app.use(express.static(__dirname + "/public"));
 
 app.listen(3000, function() {
     console.log("Server is working properly, Bryan.");
@@ -46,7 +47,7 @@ app.get("/results", function(req, res){
     /* ~~~~~~~~~~~~~~~ */
     // Input API's clientID and clientSecret
     var clientId = "-";
-    var clientSecret = "-";
+    var clientSecret = "-;
 
     // Retrieve API Access Token
     var token = yelp.accessToken(clientId, clientSecret).then(response => {
