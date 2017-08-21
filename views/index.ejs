@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/button.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/input.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/icon.min.css">
-    
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="/script.js"></script>
 </head>
 
 <body>
@@ -24,25 +25,5 @@
             <button class="ui inverted button">Submit</button>
         </form>
     </div>
-    
-    <script>
-        
-        // Ajax call
-        $("form").submit(function(e) {
-            var url = "/results";
-
-            $.ajax({
-                type:"GET",
-                url: url,
-                // seralize form elements
-                data: $("form").serialize(),
-                success: function(data) {
-                    alert(data);
-                }
-            });
-            
-            e.preventDefault();
-        });
-    </script>
 </body>
 </html>

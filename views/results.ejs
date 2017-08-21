@@ -1,16 +1,39 @@
-<p><%= location %></p>
-<p><%= food %></p>
-<h1><%=business.name%></h1>
-<p><%= business.price %></p>
-<p>rating <%= business.rating %>/5 </p>
-<p>location: <%= business.location["display_address"][0] %>  <%= business.location["display_address"][1] %> </p>
-<p><%= business.display_phone %> </p>
-<p>Type:</p> 
-<% business.categories.forEach(function(type){ %>
-    <p><%=type["title"]%></p>
-<% }) %>
-
-<img src="<%=business.image_url%>">
-<a href="<%=business.url%>">Link to Yelp page</a>
-
-<a href="/"> return </a>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>What-To-Eat</title>
+    <!-- CSS LINKING -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/button.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/input.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/icon.min.css">
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div class="results">
+        <h2>AWESOMESAUCE! <br />It looks like you got</h2>
+        <h1><%= food %></h1>
+        <p>How about geting it at</p>
+        <h1><%=business.name%></h1>
+        <div class="img">
+            <img src="<%=business.image_url%>">
+        </div>
+        
+        <p>Type: 
+        <% business.categories.forEach(function(type){ %>
+            <%=type["title"]%>
+        <% }) %>  </p>   
+        
+        <p>Rating: <%= business.rating %>/5 &nbsp; &nbsp; Price Range: <%= business.price %>
+        <br />Address: <%= business.location["display_address"][0] %>  <%= business.location["display_address"][1] %><br />Phone: <%= business.display_phone %></p>
+        <div class="navigation">
+            <ul>
+                <a  class="ui inverted button" href="<%=business.url%>"><li>Link to Yelp page</li></a>
+                <a  class="ui inverted button" href="/"><li>Try Again</li></a>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

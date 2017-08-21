@@ -3,7 +3,7 @@
 /* =================== */
 var express      = require("express");          // Node.js framework
 var yelp         = require("yelp-fusion");      // Yelp Fusion API
-var foodList     = require("./food-list.js");
+var foodList     = require("./exports/food-list.js");
 
 /* =================== */
 /*    CONFIGURATIONS   */
@@ -47,7 +47,7 @@ app.get("/results", function(req, res){
     /* ~~~~~~~~~~~~~~~ */
     // Input API's clientID and clientSecret
     var clientId = "-";
-    var clientSecret = "-;
+    var clientSecret = "-";
 
     // Retrieve API Access Token
     var token = yelp.accessToken(clientId, clientSecret).then(response => {
@@ -75,9 +75,13 @@ app.get("/results", function(req, res){
                 var business = response.jsonBody.businesses[num];
                 res.render("results",  {food: food, location: location, business: business});  
             } else { // If not, just send in error page
+                console.log("I'm in the else");
+                console.log(food);
                 res.render("error");
             }
         }).catch(e => {
+                            console.log("I'm outside the else");
+                console.log(food);
             res.render("error");
         });
     }

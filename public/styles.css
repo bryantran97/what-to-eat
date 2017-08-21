@@ -6,34 +6,13 @@ body, html {
 body {
     text-align: center;
     margin: auto auto;
-    background: linear-gradient(-45deg, #134e5e, #71b280);
+    background: linear-gradient(-45deg, #141e30, #243b55);
     background-size: 400% 400%;
 
     -webkit-animation: AnimationName 15s ease infinite;
     -moz-animation: AnimationName 15s ease infinite;
     animation: AnimationName 15s ease infinite;
 }
-
-.content {
-    position: relative;
-    top: 20%;
-}
-
-h1 {
-    display: inline-block;
-    font-family: 'Lato';
-}
-
-p {
-    font-family: 'Open Sans';
-}
-
-button {
-    display: block !important;
-    margin: 0 auto !important;
-    margin-top: 30px !important;
-}
-
 
 /* Gradient animation */
 @-webkit-keyframes AnimationName {
@@ -50,5 +29,65 @@ button {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
+}
+button {
+    display: block !important;
+    margin: 0 auto !important;
+    margin-top: 30px !important;
+}
+h1, h2 {
+    font-family: 'Lato';
+}
+p {
+    font-family: 'Open Sans';
+}
+.img {
+    margin: 0 auto;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+}
+
+/* ================== */
+/*        CONTENT     */
+/* ================== */
+.content {
+    position: relative;
+    top: 20%;
+    padding: 0 40px 50px 40px;
+}
+.content h1, .content h2 {
+    display: inline-block;
+}
+.content p {
+    font-family: 'Open Sans';
+}
+
+/* ================== */
+/*        CONTENT     */
+/* ================== */
+
+.results {
+    position: relative;
+    top: 100px;
+    padding-bottom: 50px;
+}
+.results h2 {
+    margin: 4px
+}
+.results h1 {
+    padding: 7px;
+}
+.results li {
+    display: inline-block;
+    list-style: none;
+}
+ul {
+    padding: 0;
+}
+.navigation {
+    margin: 0 auto;
 }
 
