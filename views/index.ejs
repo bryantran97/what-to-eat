@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>What-To-Eat</title>
-    <!-- CSS LINKING -->
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/button.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/input.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/icon.min.css">
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="/script.js"></script>
-</head>
-
-<body>
+<% include ./partials/header %>
+<div class="container">
     <div class="content">
+        <img src="/favicon.png">
         <h1>Are you a true foodie? <br/>Try me out</h1>
         <p>Put in your location and press SUBMIT<p>
         <form method="GET" action="/results">
@@ -25,5 +12,7 @@
             <button class="ui inverted button">Submit</button>
         </form>
     </div>
-</body>
-</html>
+</div>
+
+<% include ./partials/footer %>
+

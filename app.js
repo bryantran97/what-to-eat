@@ -19,13 +19,14 @@ app.listen(3000, function() {
 /* =================== */
 /*      RANDOM FOOD    */
 /* =================== */
-
-function generateRandomFood(max){               // Generate a random food from food list
+// Generate a random food from food list
+function generateRandomFood(max){             
     var x = Math.random() * (max - 1) + 1;
     return foodList[Math.floor(x)];
 }
 
-function generateRandomNum(max){                // Generate a random restaraunt
+// Generate a random restaraunt
+function generateRandomNum(max){       
     var max = max-1;
     var x = Math.random() * (max);
     return Math.floor(x);
@@ -74,14 +75,10 @@ app.get("/results", function(req, res){
             if(response.jsonBody.businesses[num].name !== "undefined"){
                 var business = response.jsonBody.businesses[num];
                 res.render("results",  {food: food, location: location, business: business});  
-            } else { // If not, just send in error page
-                console.log("I'm in the else");
-                console.log(food);
+            } else {
                 res.render("error");
             }
         }).catch(e => {
-                            console.log("I'm outside the else");
-                console.log(food);
             res.render("error");
         });
     }
