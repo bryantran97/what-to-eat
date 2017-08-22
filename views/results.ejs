@@ -18,9 +18,17 @@
         <div class="navigation">
             <ul>
                 <a  class="ui inverted button" href="<%=business.url%>"><li>Link to Yelp page</li></a>
-                <a  class="ui inverted button" href="/"><li>Try Again</li></a>
+                
+                <li><form class="resubmit-form" method="GET" action="/results">
+                    <div class="ui icon input">
+                        <input style="display: none;" value="<%=location%>" type="text" name="location">
+                        <button class="ui inverted button">Try Again</button>
+                    </div>
+                </form>
+                </li>
             </ul>
         </div>
+        <a class="ui inverted button return-button" href="/">Different City</a>
     </div>
 </div>
 
